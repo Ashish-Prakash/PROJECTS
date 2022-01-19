@@ -35,5 +35,4 @@ function moveFile(file,extensionfolder){
     let destination = extensionfolder+"/"+file;
     fs.copyFileSync(sourcefile,destination);
     fs.unlinkSync(sourcefile);
-
 }   
