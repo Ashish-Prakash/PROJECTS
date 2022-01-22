@@ -1,26 +1,15 @@
 let inputtodo = document.querySelector(".todo-input");
-let addtodo = document.querySelector(".todo-button");
-// console.log(addtodo);
+let list = document.querySelector("#list");
 
-addtodo.addEventListener("click", function(){
-    addTodo();
-});
+inputtodo.addEventListener("keypress", function(e){
+    if(e.key == "Enter"){
+        let li = document.createElement("li");
+        li.innerHTML = e.currentTarget.value;
+        list.append(li);
+        e.currentTarget.value = "";
 
-addtodo.addEventListener("keypress", function(event){
-    if(event.code == "ente  r"){
-        addTodo();
+        li.addEventListener("dblclick", function(e){
+            e.currentTarget.remove();
+        })
     }
-});
-function addTodo(){
-    let inputval = inputtodo.value;
-    if(inputval){
-        let listItem = document.createElement("list");
-        listItem.classList.add("todo-item");
-        let ptag = document.createElement("p");
-        ptag.classList.add("todo");
-
-    }
-    else{
-        alert("Enter todo");
-    }
-}
+})
