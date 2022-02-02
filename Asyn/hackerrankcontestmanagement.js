@@ -21,5 +21,9 @@ async function login (){
     let event = await tab.$("#content > div > div > div > div > div.page-header-wrapper.theme-m-section > nav > div > div.nav-buttons.theme-m-section > ul.pull-left.nav-wrap.mmL > li:nth-child(3) > div > div > span");
     await event.click();
     await tab.click("#content > div > div > div > div > div.page-header-wrapper.theme-m-section > nav > div > div.nav-buttons.theme-m-section > ul.pull-left.nav-wrap.mmL > li:nth-child(3) > div > div.dropdown-body.profile-nav__dropdown-menu > ul > li:nth-child(8) > a");
+    await tab.waitForTimeout(3000);
+    await tab.click("#content > div > div > div > section > header > ul > li:nth-child(2) > a");
+    let createelement = await tab.$("#content > div > div > div > section > div:nth-child(2) > button");
+    let createelementlink = "https://www.hackerrank.com/administration/challenges/create";
 };
 login ();
