@@ -8,6 +8,7 @@ async function login (){
         headless : false,
         defaultViewport : null,
         args : ["--start-maximized"],
+        slowMo : 100
     });
     const page = await browser.pages();
     let tab = page[0];
@@ -40,9 +41,10 @@ async function login (){
     // let createChallengeLink = await tab.evaluate( function(elem){ return elem.getAttribute("href"); }   ,  createChallengeElement)
     // createChallengeLink = "https://www.hackerrank.com"+createChallengeLink;
     let createchallengelink = "https://www.hackerrank.com/administration/challenges/create";
-    for(let i=0;i<challenges;i++){
-        await tab.waitForTimeout(2000);
-        await addchalange(browser, createchallengelink, challenges[i]);
+    for(let j=0;j<challenges;j++){
+        // await tab.waitForTimeout(2000);
+        // await addchalange(browser, createchallengelink, challenges[j]);
+        addchalange(browser, createchallengelink, challenges[j]);
     }
     // await addchalange(browser,createchallengelink, challenges[0]);
 };
