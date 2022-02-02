@@ -3,13 +3,16 @@ let list = document.querySelector("#list");
 
 inputtodo.addEventListener("keypress", function(e){
     if(e.key == "Enter"){
+        
         let li = document.createElement("li");
-        li.innerHTML = e.currentTarget.value;
-        list.append(li);
-        e.currentTarget.value = "";
-
-        li.addEventListener("dblclick", function(e){
-            e.currentTarget.remove();
-        })
+        let task = e.currentTarget.value;
+        if(task){
+            li.innerHTML = task;
+            list.append(li);
+            e.currentTarget.value = "";
+            li.addEventListener("dblclick", function(e){
+                e.currentTarget.remove();
+            })
+        }
     }
 })
