@@ -1,5 +1,5 @@
-const id = "shivamkarn8851@gmail.com";
-const pass = "81779370";
+const id = "dfarn8851@gmail.com";
+const pass = "adasfdas0";
 const puppeteer = require("puppeteer");
 
 async function login(){
