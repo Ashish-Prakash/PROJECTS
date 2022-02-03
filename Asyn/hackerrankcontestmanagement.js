@@ -8,14 +8,14 @@ async function login (){
         headless : false,
         defaultViewport : null,
         args : ["--start-maximized"],
-        slowMo : 100
+        // slowMo : 100
     });
     const page = await browser.pages();
     let tab = page[0];
     // login page
     await tab.goto("https://www.hackerrank.com/auth/login" , {waitUntil: 'load'});
     await tab.type("#input-1",id);
-    await tab.type("#input-2",pass);
+    await tab.type("#input-2", pass);
     await tab.click("#tab-1-content-1 > div.login-form.auth-form.theme-m > form > div.form-item.clearfix > button");
     // login complete
     console.log("logged in");
@@ -41,7 +41,7 @@ async function login (){
     // let createChallengeLink = await tab.evaluate( function(elem){ return elem.getAttribute("href"); }   ,  createChallengeElement)
     // createChallengeLink = "https://www.hackerrank.com"+createChallengeLink;
     let createchallengelink = "https://www.hackerrank.com/administration/challenges/create";
-    for(let j=0;j<challenges;j++){
+    for(let j=0;j<challenges.length;j++){
         // await tab.waitForTimeout(2000);
         // await addchalange(browser, createchallengelink, challenges[j]);
         addchalange(browser, createchallengelink, challenges[j]);
