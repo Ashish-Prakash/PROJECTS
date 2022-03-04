@@ -10,3 +10,6 @@ let o2 = {c:3, d:4};
 
 let o3 = {...o1,...o2};
 console.log(o3);
+
+let res = [...a.slice(0,1),4,5,...a];
+console.log(res);
