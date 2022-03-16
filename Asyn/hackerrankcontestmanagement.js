@@ -12,7 +12,6 @@ async function login (){
     });
     const page = await browser.pages();
     let tab = page[0];
-    // login page
     await tab.goto("https://www.hackerrank.com/auth/login" , {waitUntil: 'load'});
     await tab.type("#input-1",id);
     await tab.type("#input-2", pass);
